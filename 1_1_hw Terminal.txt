@@ -1,0 +1,41 @@
+1) Посмотреть где я - pwd
+2) Создать папку - mkdir foldername
+3) Зайти в папку - cd !$
+4) Создать 3 папки - mkdir foldername1 foldername2 foldername3
+5) Зайти в любую папку - cd foldername1
+6) Создать 5 файлов (3 txt, 2 json) - touch filename1.txt filename2.txt filename3.txt filename4.json filename5.json
+7) Создать 3 папки - mkdir foldername4 foldername5 foldername6
+8. Вывести список содержимого папки ls -la
+9) + Открыть любой txt файл - vim filename1.txt
+10) + написать туда что-нибудь, любой текст. - I (insert появится в низу терминала), потом ввести нужный текст
+11) + сохранить и выйти. - Esc затем :wq затем enter
+12) Выйти из папки на уровень выше - cd ..
+—
+13) переместить любые 2 файла, которые вы создали, в любую другую папку. - mv foldername1/{filename4.json,filename5.json} foldername2
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.- cp foldername2/{filename4.json,filename5.json} foldername3
+15) Найти файл по имени - find -name filename1.txt или если в опреледенной папке - find foldername1 -name filename1.txt 
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.- tail -f foldername1/filename1.txt или если надо найти определенную строку tail -f foldername1/filename1.txt | grep search_term (искомое слово, строка, термин)
+17) вывести несколько первых строк из текстового файла head -2(кол-во нужных строк) foldername1/filename1.txt
+18) вывести несколько последних строк из текстового файла - tail -2(кол-во нужных строк) foldername1/filename1.txt
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает. - less foldername1/filename1.txt 
+20) вывести дату и время - date
+
+1) Отправить http запрос на сервер.
+curl http://162.55.220.72:5005/terminal-hw-request
+curl 'http://162.55.220.72:5005/get_method?name=Elena&age=32'
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+- touch script.sh создаем файл в терминале
+- vim script.sh открываем созданный файл
+- записываем скрипт
+#!/bin/bash
+cd qa_1
+mkdir test1 test2 test3
+cd test1
+touch 4.txt 5.txt 6.txt 7.json 8.json
+mkdir test4 test5 test6
+ls -la
+mv 7.json 8.json test4
+- выходим из vim
+- исполняем скрипт
+chmod +x script.sh
+./script.sh
